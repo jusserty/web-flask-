@@ -1,0 +1,8 @@
+.AfterLogin{
+  width: 1600px;
+  height: 900px;/*必须设长宽*/
+  background-image: url("../images/account.png"); /*写相对路径*/
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
