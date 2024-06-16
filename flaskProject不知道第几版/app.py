@@ -1,6 +1,8 @@
 import datetime
 from flask import Flask, request, render_template, g, session
 from flask import Flask
+from flask_jwt_extended import JWTManager
+from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from flask_migrate import Migrate
@@ -18,6 +20,7 @@ db.init_app(app)
 app.register_blueprint(qa_bp)
 app.register_blueprint(auth_bp)
 mail.init_app(app)
+Session(app)
 
 migrate=Migrate(app,db)
 

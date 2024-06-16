@@ -23,3 +23,4 @@ MAIL_PASSWORD="myopdluszmqxdcdc"
 MAIL_DEFAULT_SENDER="3150742519@qq.com"
 
 SECRET_KEY = 'DAFDSFSDGGdfafdasfw'
+SESSION_TYPE = 'filesystem'

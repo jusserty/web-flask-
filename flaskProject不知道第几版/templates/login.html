@@ -6,7 +6,7 @@
 
 {%block body%}
  <link rel="stylesheet" href="../static/css/login.css">
-{#    <script src="../static/js/shixun.js"></script>#}
+
  <div class="row mt-4">
             <div class="col"></div>
             <div class="col">
@@ -21,8 +21,8 @@
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="form-group">
-{#                        <button type="submit" class="btn btn-primary btn-block" id="checkButton">立即登录</button>#}
-                        <a href="http://127.0.0.1:5000/auth/MainPage " class="btn btn-primary btn-block">立即登陆</a>
+                        <button type="submit" class="btn btn-primary btn-block" id="checkButton">立即登录</button>
+{#                        <a href="http://127.0.0.1:5000/auth/MainPage " class="btn btn-primary btn-block">立即登陆</a>#}
                     </div>
 
                 </form>
@@ -54,7 +54,7 @@
         .then(data => {
             if (data.success) {
                 // 如果邮箱和密码都正确，重定向到主页
-                window.location.href = '/';
+                window.location.href = 'http://127.0.0.1:5000/auth/MainPage';
             } else {
                 // 如果邮箱或密码错误，提示用户
                 alert(data.message);

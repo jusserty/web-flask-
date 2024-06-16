@@ -37,6 +37,11 @@
       <p>服务器投诉</p>
     </div>
   </main>
+  <script>
+      window.onbeforeunload = function (){
+          fetch('logout',{method:'POST'});
+      };
+  </script>
   <footer>
     &copy; 2024 APEX商店网页版
   </footer>
