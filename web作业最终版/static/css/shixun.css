@@ -1,0 +1,43 @@
+.my-image{
+  width: 1600px;
+  height: 900px;/*必须设长宽*/
+  background-image: url("../images/apex.jpg"); /*写相对路径*/
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.button{
+    width: 150px; /* 设置按钮宽度 */
+    height: 50px; /* 设置按钮高度 */
+    /*background-color: rgba(0, 123, 255, 0.5);*/
+    opacity: 0.5;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position:absolute ;
+    top:780px;
+    left:760px;
+}
+  .button:hover {
+    background-color: rgba(0, 123, 255, 0.7); /* 鼠标悬停时增加透明度 */
+   opacity: 1.0
+  }
+  .my-image2{
+      width: 300px;
+      height: 300px;/*必须设长宽*/
+      background-image: url("../images/failure.png"); /*写相对路径*/
+  }
+  .button2{
+    width: 200px; /* 设置按钮宽度 */
+    height: 100px; /* 设置按钮高度 */
+    /*background-color: rgba(0, 123, 255, 0.5);*/
+    opacity: 0.5;
+    color: red;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position:absolute ;
+    top:500px;
+    left:760px;
+}

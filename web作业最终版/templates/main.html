@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/shixun.css">
+</head>
+<body>
+<div class="my-image">
+    <button id="myButton" class="button">鼠标点击登录</button>
+</div>
+  <script>
+      window.onbeforeunload = function (){
+          fetch('logout',{method:'POST'});
+      };
+  </script>
+</body>
+<a href="http://127.0.0.1:5000/auth/login " class="button"></a>
+</html>
+
+

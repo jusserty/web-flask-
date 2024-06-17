@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Warehouse</title>
+    <link rel="stylesheet" href="../static/css/wareh.css">
+</head>
+<body>
+    <div class="image-gallery">
+        <!-- 图片将通过JavaScript动态添加到这个容器中 -->
+    </div>
+
+    <script>
+        // 从后端获取图片并显示
+        function displayImages() {
+            var gallery = document.querySelector('.image-gallery');
+            fetch('/auth/get-images')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Failed to fetch image URLs.');
+                })
+                .then(data => {
+                    data.image_urls.forEach(url => {
+                        var img = document.createElement('img');
+                        img.src = url;
+                        gallery.appendChild(img);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading images:', error);
+                });
+        }
+
+        // 页面加载完毕后显示图片
+        window.onload = displayImages;
+    </script>
+  <script>
+      window.onbeforeunload = function (){
+          fetch('logout',{method:'POST'});
+      };
+  </script>
+</body>
+</html>

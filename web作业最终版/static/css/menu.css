@@ -1,0 +1,57 @@
+#window {
+    width:90%;
+    height: 700px;
+    margin: 40px auto;
+    border: none; /* 移除边框 */
+    background: #f0f0f0; /* 更浅的背景色 */
+    background: linear-gradient(135deg, #D3D3D3 0%, #FFD1D1 100%); /* 添加渐变背景 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    overflow: hidden; /* 确保子元素不会超出边框 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡效果 */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-container button {
+    /* 增加内边距，使按钮内容更宽松 */
+    margin: 0 100px; /* 按钮之间的间距 */
+    padding: 15px 30px; /* 增加内边距 */
+
+    /* 增加字体大小 */
+    font-size: 18px;
+
+    /* 改变背景色、文字颜色和边框 */
+    color: #fff; /* 白色文字 */
+    background: #333; /* 深色背景 */
+    border: none; /* 无边框 */
+
+    /* 增加圆角边框的曲率 */
+    border-radius: 8px; /* 圆角边框 */
+
+    /* 平滑过渡效果 */
+    transition: background 0.3s ease;
+}
+
+.button-container button:hover {
+    background: #555; /* 鼠标悬停时更深的背景色 */
+}
+
+/* 其他内容样式 */
+#window h2, #window p {
+    color: #333; /* 文字颜色 */
+    text-align: center; /* 文本居中 */
+    margin: 10px 0; /* 上下边距 */
+}
+
+#window h2 {
+    font-size: 24px; /* 标题字体大小 */
+}
+
+#window p {
+    font-size: 16px; /* 段落字体大小 */
+    line-height: 1.6; /* 行高 */
+}

@@ -1,0 +1,38 @@
+ .purchaseButton {
+            display: block;
+            margin: 10px auto; /* 上边距10px，自动左右边距，实现水平居中 */
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+        }
+        /* 标题淡蓝色背景和动态效果 */
+        h1 {
+            color: #87CEFA;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            animation: blink 1.5s linear infinite;
+        }
+        /* 图片样式 */
+        img {
+            display: block; /* 图片为块级元素 */
+            margin: 0 auto; /* 无上边距，自动左右边距，实现水平居中 */
+            width: 800px; /* 可以根据实际情况调整 */
+            height: 400px; /* 可以根据实际情况调整 */
+        }
+        /* 按钮容器，用于居中显示按钮 */
+        .button-container {
+            text-align: center; /* 文本居中，按钮也会跟随居中 */
+        }
+        /* 定义闪烁动画 */
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }

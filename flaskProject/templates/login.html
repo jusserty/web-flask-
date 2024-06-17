@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title%}登录{%endblock%}
+
+{% block head%}{% endblock%}
+
+{%block body%}
+ <link rel="stylesheet" href="../static/css/login.css">
+{#    <script src="../static/js/shixun.js"></script>#}
+ <div class="row mt-4">
+            <div class="col"></div>
+            <div class="col">
+{#                <form  method="POST">#}
+                <form method="POST" id="loginForm" action="{{ url_for('auth.login') }}">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">邮箱</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+{#                        <button type="submit" class="btn btn-primary btn-block" id="checkButton">立即登录</button>#}
+                        <a href="http://127.0.0.1:5000/auth/MainPage " class="btn btn-primary btn-block">立即登陆</a>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+            <script>
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault()     // 阻止表单提交
+
+            var email = document.getElementById("exampleInputEmail1").value;
+            var password = document.getElementById("exampleInputPassword1").value;
+
+            if (email === "") {
+                alert("请输入邮箱！");
+            }
+            else if(password==="") {
+                alert("请输入密码！");
+                }
+            // 发起异步请求检查邮箱和密码是否正确
+           fetch('{{ url_for("auth.check", _external=True) }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'email': email, 'password': password }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // 如果邮箱和密码都正确，重定向到主页
+                window.location.href = '/';
+            } else {
+                // 如果邮箱或密码错误，提示用户
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("网络错误，请稍后再试！");
+        });
+    });
+            </script>
+
+{%endblock%}

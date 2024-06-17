@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Page</title>
+    <link rel="stylesheet" href="../static/css/usestore.css">
+</head>
+<body>
+
+    <!-- 图片嵌入 -->
+    <h1>Apex的黑心商店</h1>
+    <img src="../static/images/r99.png" alt="Store Image">
+    <div class="button-container">
+        <button class="purchaseButton" id="purchaseButton">r99血腥运动</button>
+    </div>
+<script>
+    // 获取按钮元素
+    var purchaseButton = document.getElementById('purchaseButton');
+
+    // 为按钮添加点击事件监听器
+    purchaseButton.addEventListener('click', function() {
+        // 弹出“购买成功”的消息框
+        alert('购买成功');
+
+        // 准备要发送的数据
+        var data = {
+            buttonId: this.id // 使用 this.id 获取按钮的 id
+        };
+
+        // 使用 fetch 发送 POST 请求
+        fetch('/auth/your-backend-endpoint', { // 替换为你的后端接收数据的URL
+            method: 'POST', // 或者 'GET'，根据后端要求
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // 将数据转换为 JSON 字符串
+        })
+        .then(response => response.json()) // 将响应转换为 JSON
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+    <img src="../static/images/dianneng.png" alt="Store Image">
+    <div class="button-container">
+        <button class="purchaseButton" id="purchaseButton2">电能冲锋枪暗影科技</button>
+    </div>
+<script>
+    // 获取按钮元素
+    var purchaseButton = document.getElementById('purchaseButton2');
+
+    // 为按钮添加点击事件监听器
+    purchaseButton.addEventListener('click', function() {
+        // 弹出“购买成功”的消息框
+        alert('购买成功');
+
+        // 准备要发送的数据
+        var data = {
+            buttonId: this.id // 使用 this.id 获取按钮的 id
+        };
+
+        // 使用 fetch 发送 POST 请求
+        fetch('/auth/your-backend-endpoint', { // 替换为你的后端接收数据的URL
+            method: 'POST', // 或者 'GET'，根据后端要求
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // 将数据转换为 JSON 字符串
+        })
+        .then(response => response.json()) // 将响应转换为 JSON
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+    <img src="../static/images/fuchou.jpg" alt="Store Image">
+    <div class="button-container">
+        <button class="purchaseButton" id="purchaseButton3" onclick="addImageToWarehouse('fuchou.jpg')">复仇女神</button>
+    </div>
+<script>
+    // 获取按钮元素
+    var purchaseButton = document.getElementById('purchaseButton3');
+
+    // 为按钮添加点击事件监听器
+    purchaseButton.addEventListener('click', function() {
+        // 弹出“购买成功”的消息框
+        alert('购买成功');
+
+        // 准备要发送的数据
+        var data = {
+            buttonId: this.id // 使用 this.id 获取按钮的 id
+        };
+
+        // 使用 fetch 发送 POST 请求
+        fetch('/auth/your-backend-endpoint', { // 替换为你的后端接收数据的URL
+            method: 'POST', // 或者 'GET'，根据后端要求
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // 将数据转换为 JSON 字符串
+        })
+        .then(response => response.json()) // 将响应转换为 JSON
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+    <img src="../static/images/lieshou.png" alt="Store Image">
+    <div class="button-container">
+        <button class="purchaseButton" id="purchaseButton4">猎兽冲锋枪</button>
+    </div>
+    <script>
+    // 获取按钮元素
+    var purchaseButton = document.getElementById('purchaseButton4');
+
+    // 为按钮添加点击事件监听器
+    purchaseButton.addEventListener('click', function() {
+        // 弹出“购买成功”的消息框
+        alert('购买成功');
+
+        // 准备要发送的数据
+        var data = {
+            buttonId: this.id // 使用 this.id 获取按钮的 id
+        };
+
+        // 使用 fetch 发送 POST 请求
+        fetch('/auth/your-backend-endpoint', { // 替换为你的后端接收数据的URL
+            method: 'POST', // 或者 'GET'，根据后端要求
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // 将数据转换为 JSON 字符串
+        })
+        .then(response => response.json()) // 将响应转换为 JSON
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+  <script>
+      window.onbeforeunload = function (){
+          fetch('logout',{method:'POST'});
+      };
+  </script>
+</body>
+</html>

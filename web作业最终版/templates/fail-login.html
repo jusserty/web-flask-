@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/shixun.css">
+</head>
+
+<body>
+<h1>登陆失败了呢~</h1>
+<h2>请重新登陆哦~ 如果还是无法登录请原谅我们的土豆服务器~</h2>
+<div class="my-image2">
+    <button id="myButton" class="button2">点我重新登陆哦！</button>
+</div>
+  <script>
+      window.onbeforeunload = function (){
+          fetch('logout',{method:'POST'});
+      };
+  </script>
+</body>
+<a href="http://127.0.0.1:5000/auth/login " class="button2"></a>
+</html>
